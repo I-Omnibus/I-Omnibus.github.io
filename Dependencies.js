@@ -1,9 +1,9 @@
 class Dependencies {
-  static async resolve(scripts = []) {
+  static async resolve(scripts, bypassCache = false) {
     const asyncScriptLoader = [];
 
     scripts.forEach((name) => {
-      const scriptUrl = `${name}.js${Dependencies.bypassCache(false)}`;
+      const scriptUrl = `${name}.js${Dependencies.cache(bypassCache)}`;
       asyncScriptLoader.push(Dependencies.scriptLoadPromise(scriptUrl));
     });
 
@@ -30,7 +30,7 @@ class Dependencies {
     tag.src = scriptUrl;
   }
 
-  static bypassCache(enabled = true) {
+  static cache(enabled = true) {
     return enabled ? "?" + (Math.floor(Math.random() * 9000) + 1000) : "";
   }
 }
