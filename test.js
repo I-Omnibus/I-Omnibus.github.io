@@ -1,5 +1,3 @@
-(()=>console.log("Hello World!")).call();
-
-module.exports = {
+var entry = (module.exports = {
   entry: "...",
-};
+});
