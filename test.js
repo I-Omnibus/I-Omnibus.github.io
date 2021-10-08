@@ -1,3 +1,1 @@
-var entry = (module.exports = {
-  entry: "...",
-});
+export default function() { console.log("hello!") }
