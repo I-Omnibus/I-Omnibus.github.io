@@ -1,1 +1,5 @@
-export function foo() { console.log("hello!") }
+export {foo};
+
+function foo() { console.log("hello!") }
+
+(() => console.log("test")).call();
